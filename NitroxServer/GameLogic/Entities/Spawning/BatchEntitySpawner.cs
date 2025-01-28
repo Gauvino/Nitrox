@@ -391,11 +391,11 @@ public class BatchEntitySpawner : IEntitySpawner
                     // Spawned child will not be of the same type as the current prefabAsset
                     if (placeholdersGroupsByClassId.ContainsKey(spawnedEntity.ClassId))
                     {
-                        spawnedEntity = new PlaceholderGroupWorldEntity(spawnedEntity, true, i);
+                        spawnedEntity = new PlaceholderGroupWorldEntity(spawnedEntity, i);
                     }
                     else
                     {
-                        spawnedEntity = new PrefabPlaceholderEntity(spawnedEntity, false, i);
+                        spawnedEntity = new PrefabPlaceholderEntity(spawnedEntity, true, i);
                     }
                     entity.ChildEntities.Add(spawnedEntity);
                 }
@@ -418,7 +418,7 @@ public class BatchEntitySpawner : IEntitySpawner
                 }
                 else
                 {
-                    spawnedEntity = new PrefabPlaceholderEntity(spawnedEntity, i);
+                    spawnedEntity = new PrefabPlaceholderEntity(spawnedEntity, false, i);
                 }
 
                 entity.ChildEntities.Add(spawnedEntity);
